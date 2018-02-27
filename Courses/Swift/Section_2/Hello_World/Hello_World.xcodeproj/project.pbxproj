@@ -12,6 +12,7 @@
 		411445452045D40F00BF8778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411445432045D40F00BF8778 /* Main.storyboard */; };
 		411445472045D40F00BF8778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411445462045D40F00BF8778 /* Assets.xcassets */; };
 		4114454A2045D40F00BF8778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411445482045D40F00BF8778 /* LaunchScreen.storyboard */; };
+		4114455220460B9500BF8778 /* icon 1_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4114455120460B9400BF8778 /* icon 1_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		411445462045D40F00BF8778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		411445492045D40F00BF8778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4114454B2045D40F00BF8778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4114455120460B9400BF8778 /* icon 1_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 1_4.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4114453F2045D40F00BF8778 /* AppDelegate.swift */,
 				411445412045D40F00BF8778 /* ViewController.swift */,
+				4114455120460B9400BF8778 /* icon 1_4.png */,
 				411445432045D40F00BF8778 /* Main.storyboard */,
 				411445462045D40F00BF8778 /* Assets.xcassets */,
 				411445482045D40F00BF8778 /* LaunchScreen.storyboard */,
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4114455220460B9500BF8778 /* icon 1_4.png in Resources */,
 				4114454A2045D40F00BF8778 /* LaunchScreen.storyboard in Resources */,
 				411445472045D40F00BF8778 /* Assets.xcassets in Resources */,
 				411445452045D40F00BF8778 /* Main.storyboard in Resources */,
