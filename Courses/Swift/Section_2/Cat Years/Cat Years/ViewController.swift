@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         resultLabel.isHidden = false
-        ageResultLabel.text = String(Int(ageTextField.text!)! * 7)
+        let ageInCatYears    = Int(ageTextField.text!)! * 7
+        ageResultLabel.text  = String(ageInCatYears)
     }
     
     override func viewDidLoad() {
