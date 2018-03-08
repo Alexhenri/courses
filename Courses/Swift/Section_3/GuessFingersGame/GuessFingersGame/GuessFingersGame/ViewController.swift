@@ -1,51 +1,47 @@
-//
-//  ViewController.swift
-//  GuessFingersGame
-//
-//  Created by Alexandre Henrique Silva on 28/02/18.
-//  Copyright © 2018 Alexhenri. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var guessFingersNumber: UITextField!
+    @IBOutlet weak var guessFingersNumber: UITextField! // guessFingersTextField or just guessTextField should be more intuitive
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func guessButtonPressed(_ sender: UIButton) {
         
-        let fingersNumber = arc4random_uniform(6)
+        let fingersNumberAwnser = Int(arc4random_uniform(6))
         
-        if guessFingersNumber.text == nil || guessFingersNumber.text! == "" || Int(guessFingersNumber.text!)! < 0 || Int(guessFingersNumber.text!)! > 5 {
-            
-            resultLabel.textColor   = UIColor.red
-            resultLabel.text        = "Please, enter a number from 0 to 5."
-            
-        } else if Int(guessFingersNumber.text!) == Int(fingersNumber) {
-            
-            resultLabel.textColor   = UIColor.green
-            resultLabel.text        = "You're right. You won."
-            
-        } else {
-            
-            resultLabel.textColor   = UIColor.red
-            resultLabel.text        = "Wrong! It was \(fingersNumber). You lose."
-            
+        guard let guessText = guessFingersNumber.text, let guessNumber = Int(guessText) else {
+            showErrorMessage()
+            return
         }
         
+        if didUserWin(with: guessNumber, awnser: fingersNumberAwnser) {
+            showVictoryMessage()
+        } else {
+            showLoserMessage(rightAwnser: fingersNumberAwnser)
+        }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    private func didUserWin(with guess: Int, awnser: Int) -> Bool {
+        return guess == awnser
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func showVictoryMessage() {
+        resultLabel.textColor = UIColor.green
+        resultLabel.text = "You're right. You won."
     }
-
-
+    
+    private func showLoserMessage(rightAwnser: Int) {
+        resultLabel.textColor = UIColor.red
+        resultLabel.text = "Wrong! It was \(rightAwnser). You lose."
+    }
+    
+    private func showErrorMessage() {
+        resultLabel.textColor = UIColor.red
+        resultLabel.text = "Please, enter a number from 0 to 5."
+    }
 }
 
+// 1 - didLoad or others funcs without any implementation, u should delete it
+// 2 - its nice to keep view's life cycle funcs on top of the file (viewDidLoad, etc).. it's a pattern.
+// 3 - input "aaa" on previous implementation to make the app crash. Avoid using "!" and make more error handling
+// 4 - one func one thing... make your code more legible (split your funcs logic into more funcs) =p
